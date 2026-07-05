@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>北義大利4天3夜</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@700;900&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#1a2744;
+  --navy-light:#243259;
+  --navy-mid:#1e3060;
+  --navy-accent:#2d4a8a;
+  --gold:#c8a84b;
+  --gold-light:#e8d5a0;
+  --red:#c0392b;
+  --cream:#f5f7fa;
+  --white:#ffffff;
+  --text:#1e2733;
+  --text-light:#5a6478;
+  --border:#d8dfe8;
+  --shadow:0 2px 16px rgba(26,39,68,0.10);
+}
+html,body{width:100%;overflow-x:hidden;background:var(--cream);color:var(--text);font-family:'Noto Sans TC',sans-serif}
+
+/* ── BANNER ── */
+.banner{background:linear-gradient(150deg,#0d1b38 0%,var(--navy) 45%,var(--navy-accent) 100%);color:#fff;position:relative;overflow:hidden;padding:0}
+.banner-bg{position:absolute;inset:0;pointer-events:none}
+.banner-content{position:relative;z-index:2;padding:38px 24px 30px}
+.lang-switch{position:absolute;right:18px;top:16px;z-index:4;display:flex;align-items:center;gap:2px;background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.22);border-radius:18px;padding:3px;backdrop-filter:blur(10px)}
+.lang-btn{border:none;background:transparent;color:rgba(255,255,255,0.68);border-radius:14px;padding:5px 10px;font-size:12px;font-weight:700;font-family:'Noto Sans TC',sans-serif;cursor:pointer;line-height:1;transition:background 0.2s,color 0.2s}
+.lang-btn.active{background:var(--red);color:#fff}
+.lang-btn:hover{color:#fff}
+.banner-eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-light);margin-bottom:10px;font-weight:500}
+.banner-title{font-family:'Noto Serif TC',serif;font-size:clamp(30px,6vw,54px);font-weight:900;line-height:1.12;letter-spacing:0;color:#fff}
+.banner-title span{color:var(--gold-light)}
+.banner-sub{margin-top:14px;font-size:14px;color:rgba(255,255,255,0.78);line-height:1.85}
+.banner-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.pill{background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.22);border-radius:20px;padding:6px 16px;font-size:12px;color:rgba(255,255,255,0.9);letter-spacing:0.3px;cursor:pointer;font-family:'Noto Sans TC',sans-serif;display:inline-flex;flex-direction:column;align-items:center;gap:1px;transition:background 0.2s}
+.pill:hover{background:rgba(255,255,255,0.22)}
+.pill.red{background:var(--red);border-color:var(--red)}
+.pill.red:hover{background:#a93224}
+.pill-ja{font-size:13px;font-weight:600;line-height:1.2}
+.pill-en{font-size:8px;font-weight:400;opacity:0.65;letter-spacing:0.5px;line-height:1}
+.banner-mountain{position:absolute;bottom:0;left:0;right:0;pointer-events:none}
+
+/* ── NAV TABS ── */
+.tabs-wrapper{background:var(--navy);position:sticky;top:0;z-index:100;box-shadow:0 3px 10px rgba(0,0,0,0.35)}
+.tabs{
+  display:flex;
+  flex-wrap:nowrap;
+  overflow:hidden;
+  padding:4px 4px 0;
+  gap:1px;
+}
+.tab{
+  flex:1 1 0;
+  min-width:0;
+  padding:7px 2px 9px;
+  font-size:11px;
+  color:rgba(255,255,255,0.5);
+  font-weight:500;
+  cursor:pointer;
+  border-bottom:3px solid transparent;
+  border-top:none;border-left:none;border-right:none;
+  transition:all 0.2s;
+  font-family:'Noto Sans TC',sans-serif;
+  background:none;
+  text-align:center;
+  line-height:1.25;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:1px;
+  overflow:hidden;
+}
+.tab:hover{color:rgba(255,255,255,0.85)}
+.tab.active{color:#fff;border-bottom-color:var(--gold);background:rgba(255,255,255,0.06);border-radius:6px 6px 0 0}
+.tab-day{font-size:10px;font-weight:700;letter-spacing:0.5px;opacity:0.7;text-transform:uppercase}
+.tab.active .tab-day{opacity:1;color:var(--gold-light)}
+.tab-city{font-size:13px;font-weight:600;white-space:nowrap}
+
+/* ── MAIN ── */
+.main{max-width:860px;margin:0 auto;padding:24px 16px 60px}
+
+/* ── OVERVIEW HERO ── */
+.overview-hero{background:linear-gradient(150deg,#0d1b38 0%,var(--navy) 60%,var(--navy-accent) 100%);border-radius:16px;padding:28px;color:#fff;margin-bottom:24px}
+.overview-hero h2{font-family:'Noto Serif TC',serif;font-size:23px;font-weight:900;letter-spacing:0;margin-bottom:7px}
+.overview-hero p{font-size:15px;opacity:0.85;line-height:1.75}
+
+/* ── INFO GRID ── */
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px}
+.info-card{background:var(--white);border-radius:12px;padding:18px;box-shadow:var(--shadow)}
+.info-card h4{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--navy);margin-bottom:8px;font-weight:700;opacity:0.65}
+.info-card p{font-size:14px;line-height:1.75;color:var(--text)}
+.info-card.full{grid-column:1/-1}
+.flight-row{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);font-size:14px}
+.flight-row:last-child{border:none;padding-bottom:0}
+.flight-badge{background:var(--red);color:#fff;border-radius:6px;padding:3px 9px;font-size:11.5px;font-weight:700;flex-shrink:0}
+
+/* ── TABLE ── */
+.table-wrap{background:var(--white);border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
+.ov-table{width:100%;border-collapse:collapse;font-size:13.5px}
+.ov-table th{background:var(--navy);color:#fff;padding:12px 14px;text-align:left;font-weight:600;font-size:12.5px;letter-spacing:0.5px}
+.ov-table td{padding:12px 14px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.65}
+.ov-table tr:last-child td{border:none}
+.ov-table tr:nth-child(even) td{background:#f5f7fa}
+.day-badge{display:inline-block;background:var(--navy);color:#fff;border-radius:6px;padding:2px 9px;font-size:11.5px;font-weight:700;white-space:nowrap}
+
+/* ── TIPS ── */
+.tips-card{background:var(--white);border-radius:12px;padding:20px;box-shadow:var(--shadow);margin-top:24px}
+.tips-card h3{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:14px;display:flex;align-items:center;gap:6px}
+.tip-item{display:flex;align-items:flex-start;gap:10px;padding:9px 0;border-bottom:1px dashed var(--border);font-size:14px;line-height:1.7}
+.tip-item:last-child{border:none}
+.tip-icon{flex-shrink:0;font-size:16px;margin-top:1px}
+
+/* ── LOCAL SHOPPING ── */
+.shopping-card{background:var(--white);border-radius:12px;padding:20px;box-shadow:var(--shadow);margin-top:24px}
+.shopping-card h3{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:14px;display:flex;align-items:center;gap:6px}
+.shopping-item{display:grid;grid-template-columns:132px minmax(0,1fr);gap:18px;padding:16px;border:1px solid var(--border);border-radius:12px;background:#fbfcfe}
+.shopping-item + .shopping-item{margin-top:12px}
+.shopping-thumb{width:132px;height:132px;border-radius:10px;object-fit:contain;object-position:center;background:#fff;padding:4px;box-shadow:0 2px 10px rgba(26,39,68,0.12)}
+.shopping-info{min-width:0}
+.shopping-name{font-size:17px;font-weight:700;color:var(--navy);line-height:1.35}
+.shopping-ja{font-size:12.5px;color:var(--text-light);margin-top:2px;line-height:1.5}
+.shopping-desc{font-size:14px;line-height:1.75;color:#374151;margin-top:9px}
+.shopping-meta{display:grid;gap:6px;margin-top:10px;font-size:13px;line-height:1.6}
+.shopping-meta-row{display:grid;grid-template-columns:78px minmax(0,1fr);gap:7px}
+.shopping-meta-label{font-weight:700;color:var(--navy)}
+.shopping-note{font-size:11.5px;color:var(--text-light);margin-top:10px}
+.shopping-links{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
+.shopping-link{display:inline-flex;align-items:center;border-radius:20px;padding:4px 11px;background:#e6ecf5;color:var(--navy);font-size:11.5px;font-weight:700;text-decoration:none}
+.shopping-link:hover{background:#d9e3f1}
+
+/* ── DAY HEADER ── */
+.day-header{background:linear-gradient(150deg,#0d1b38 0%,var(--navy) 60%,var(--navy-accent) 100%);border-radius:16px;padding:26px;color:#fff;margin-bottom:28px;position:relative;overflow:hidden}
+.day-header::after{content:'';position:absolute;right:-20px;top:-20px;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,0.04)}
+.day-num{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-light);margin-bottom:6px;font-weight:600}
+.day-title{font-family:'Noto Serif TC',serif;font-size:27px;font-weight:900;line-height:1.18;letter-spacing:0}
+.day-city-pill{display:inline-block;background:var(--red);border-radius:20px;padding:5px 16px;font-size:13px;margin-top:12px;font-weight:500}
+
+/* ── TIMELINE ── */
+.timeline{display:flex;flex-direction:column;gap:10px;position:relative;padding-left:0}
+.timeline::before{
+  content:'';position:absolute;
+  left:13px;
+  top:0;bottom:0;
+  width:2px;
+  background:linear-gradient(to bottom,var(--navy-accent),var(--navy));
+  border-radius:2px;opacity:0.4;
+  z-index:0;
+}
+.stop{
+  display:grid;
+  grid-template-columns:28px 1fr;
+  align-items:start;
+  gap:10px;
+  position:relative;
+  z-index:1;
+}
+.stop-dot{
+  width:28px;height:28px;border-radius:50%;
+  background:var(--navy);
+  color:#fff;
+  border:none;
+  display:flex;align-items:center;justify-content:center;
+  font-size:13px;font-weight:700;
+  flex-shrink:0;
+  margin-top:10px;
+  z-index:2;
+  cursor:pointer;
+  transition:background 0.18s,transform 0.15s;
+  user-select:none;
+}
+.stop-dot:hover{background:var(--navy-accent);transform:scale(1.12)}
+.stop.transport .stop-dot{
+  background:var(--navy-accent);
+  width:14px;height:14px;margin-top:17px;margin-left:7px;
+  cursor:default;
+}
+.stop.transport .stop-dot:hover{transform:none}
+.stop.transport .stop-dot::after{display:none}
+.stop-card{background:var(--white);border-radius:12px;box-shadow:var(--shadow);overflow:hidden;cursor:pointer;transition:box-shadow 0.2s,transform 0.15s}
+.stop-card:hover{box-shadow:0 4px 24px rgba(26,39,68,0.14);transform:translateY(-1px)}
+.stop-card.transport-card{background:var(--navy);cursor:default;transform:none}
+.stop-card.transport-card:hover{transform:none;box-shadow:var(--shadow)}
+.stop-head{display:flex;align-items:center;gap:12px;padding:15px 16px}
+.stop-icon{font-size:21px;flex-shrink:0;line-height:1}
+.stop-info{flex:1;min-width:0}
+.stop-label{font-size:10.5px;letter-spacing:1px;text-transform:uppercase;font-weight:700;margin-bottom:3px;color:var(--navy);opacity:0.55}
+.stop-name{font-size:15px;font-weight:700;line-height:1.3;color:var(--navy)}
+.transport-card .stop-name{color:#fff;font-size:14px}
+.transport-card .stop-label{color:rgba(255,255,255,0.55)}
+.stop-arrow{font-size:12px;color:var(--navy);opacity:0.4;transition:transform 0.25s;flex-shrink:0}
+.stop-card.open .stop-arrow{transform:rotate(180deg);opacity:0.7}
+.stop-body{max-height:0;overflow:hidden;transition:max-height 0.35s cubic-bezier(0.4,0,0.2,1)}
+.stop-body.open{max-height:600px}
+.stop-body-inner{padding:0 16px 16px;border-top:1px solid var(--border)}
+.stop-body-inner p{font-size:14.5px;line-height:1.85;color:#374151;margin-top:12px}
+.tag-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.tag{display:inline-block;border-radius:20px;padding:3px 12px;font-size:12px;font-weight:600}
+.tag.food{background:#fef3e2;color:#92580a}
+.tag.sight{background:#e8f0fc;color:#1a4ea8}
+.tag.event{background:#fce8f3;color:#8f166e}
+.tag.transport{background:#e6ecf5;color:#1a2744}
+.tag.hotel{background:#e6ecf5;color:#1a2744}
+
+/* ── SECTION TITLE ── */
+.section-title{font-size:11.5px;letter-spacing:2px;text-transform:uppercase;color:var(--navy);opacity:0.5;font-weight:700;margin:28px 0 14px;display:flex;align-items:center;gap:8px}
+.section-title::after{content:'';flex:1;height:1px;background:var(--border)}
+
+/* ── HOTEL INLINE PILLS ── */
+.hotel-pill{background:#e6ecf5;color:#1a2744;border-radius:20px;padding:3px 12px;font-size:12px;font-weight:600}
+
+.view{display:none}.view.active{display:block}
+html[lang="de"] .banner-title,
+html[lang="de"] .overview-hero h2,
+html[lang="de"] .day-title{font-family:'Noto Sans TC',sans-serif}
+
+@media (max-width: 640px){
+  .banner-content{padding:78px 24px 30px}
+  .lang-switch{top:22px;right:20px;border-radius:22px;padding:4px;background:rgba(255,255,255,0.14);box-shadow:0 8px 24px rgba(0,0,0,0.14)}
+  .lang-btn{font-size:13px;padding:7px 13px;border-radius:18px}
+  .banner-eyebrow{max-width:250px;line-height:1.7;margin-bottom:14px}
+  .banner-title{font-size:clamp(38px,12vw,54px);line-height:1.12}
+  .banner-sub{font-size:15px;line-height:1.55}
+  html[lang="de"] .banner-sub{font-size:clamp(12px,3.55vw,15px);white-space:nowrap}
+  .banner-pills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:20px}
+  .pill{width:100%;min-width:0;padding:8px 10px;border-radius:26px}
+  .pill-ja{font-size:16px;white-space:nowrap}
+  .pill-en{font-size:11px}
+  .tabs-wrapper{position:sticky;top:0}
+  .tabs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));overflow:visible;gap:3px;padding:5px}
+  .tab{min-width:0;width:100%;padding:8px 2px 9px;border-bottom-width:3px;border-radius:7px 7px 0 0;line-height:1.18}
+  .tab-day{font-size:11px;letter-spacing:0.2px;white-space:nowrap}
+  .tab-city{font-size:12px;line-height:1.12;max-width:100%;overflow:hidden;text-overflow:ellipsis}
+  html[lang="de"] .tab-city{font-size:11.5px}
+  .shopping-item{grid-template-columns:92px minmax(0,1fr);gap:12px;padding:12px}
+  .shopping-thumb{width:92px;height:112px}
+  .shopping-name{font-size:15px}
+  .shopping-meta-row{grid-template-columns:1fr;gap:0}
+}
+
+@media (min-width: 641px){
+  .tab{min-height:56px}
+}
+
+.map-link{display:inline-flex;margin-top:12px;border-radius:20px;padding:5px 12px;background:#e6ecf5;color:var(--navy);font-size:12px;font-weight:700;text-decoration:none}
+.map-link:hover{background:#d9e3f1}
+</style>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%203%202%22%3E%3Cpath%20fill%3D%22%23009246%22%20d%3D%22M0%200h1v2H0z%22%2F%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M1%200h1v2H1z%22%2F%3E%3Cpath%20fill%3D%22%23ce2b37%22%20d%3D%22M2%200h1v2H2z%22%2F%3E%3C%2Fsvg%3E"/>
+<meta name="theme-color" content="#1a2744"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-title" content="北義4天3夜"/>
+</head>
+<body>
+<div class="banner">
+  <svg class="banner-bg" viewBox="0 0 800 220" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><circle cx="650" cy="40" r="180" fill="rgba(45,74,138,0.18)"/><circle cx="750" cy="160" r="100" fill="rgba(255,255,255,0.04)"/><circle cx="80" cy="30" r="1.5" fill="rgba(255,255,255,0.4)"/><circle cx="350" cy="40" r="1.2" fill="rgba(255,255,255,0.35)"/></svg>
+  <svg class="banner-mountain" viewBox="0 0 800 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 80 L120 30 L220 55 L340 10 L420 45 L560 5 L680 40 L800 20 L800 80 Z" fill="rgba(255,255,255,0.04)"/><path d="M0 80 L80 50 L180 68 L300 38 L400 60 L520 28 L640 55 L760 35 L800 50 L800 80 Z" fill="rgba(255,255,255,0.06)"/></svg>
+  <div class="banner-content">
+    <div class="lang-switch" aria-label="Language"><button class="lang-btn active" data-lang-button="zh" onclick="setLanguage('zh')">中文</button><button class="lang-btn" data-lang-button="de" onclick="setLanguage('de')">Deutsch</button></div>
+    <div class="banner-eyebrow">✈ 2026 Northern Italy Vacation</div>
+    <div class="banner-title"><span>北義大利</span>4天3夜</div>
+    <div class="banner-sub">2026年9月7日（一）— 9月10日（四）</div>
+    <div class="banner-pills">
+      <button class="pill red" data-city="布雷西亞" onclick="jumpToCity('布雷西亞')"><span class="pill-ja">布雷西亞</span><span class="pill-en">Brescia</span></button>
+      <button class="pill" data-city="克雷莫納" onclick="jumpToCity('克雷莫納')"><span class="pill-ja">克雷莫納</span><span class="pill-en">Cremona</span></button>
+      <button class="pill" data-city="錫爾苗內" onclick="jumpToCity('錫爾苗內')"><span class="pill-ja">錫爾苗內</span><span class="pill-en">Sirmione</span></button>
+      <button class="pill" data-city="維洛那・加爾達湖" onclick="jumpToCity('維洛那・加爾達湖')"><span class="pill-ja">維洛那・加爾達湖</span><span class="pill-en">Verona · Garda</span></button>
+    </div>
+  </div>
+</div>
+<div class="tabs-wrapper"><div class="tabs" id="tabs">
+  <button class="tab active" onclick="showView('overview',this)"><span class="tab-day">總覽<br>全部</span><span class="tab-city">行程</span></button>
+  <button class="tab" data-city="布雷西亞" onclick="showView('day1',this)"><span class="tab-day">第1天<br>9/7</span><span class="tab-city">布雷西亞</span></button>
+  <button class="tab" data-city="克雷莫納" onclick="showView('day2',this)"><span class="tab-day">第2天<br>9/8</span><span class="tab-city">克雷莫納</span></button>
+  <button class="tab" data-city="維洛那・加爾達湖" onclick="showView('day3',this)"><span class="tab-day">第3天<br>9/9</span><span class="tab-city">維洛那</span></button>
+  <button class="tab" data-city="布雷西亞" onclick="showView('day4',this)"><span class="tab-day">第4天<br>9/10</span><span class="tab-city">布雷西亞</span></button>
+</div></div>
+<div class="main">
+<div class="view active" id="overview">
+  <div class="overview-hero"><h2>🇮🇹 2026年9月北義大利旅行</h2><p>以布雷西亞為三晚固定住宿基地，串連克雷莫納、錫爾苗內、維洛那、馬爾切西內與加爾達湖北岸，兼顧古城、工藝、湖景與山岳。</p></div>
+  <div class="info-grid">
+    <div class="info-card"><h4>✈ 去程</h4><div class="flight-row"><span class="flight-badge">FR3461</span><span>9/7（一）EIN 17:40 → BGY 19:15</span></div></div>
+    <div class="info-card"><h4>✈ 回程</h4><div class="flight-row"><span class="flight-badge">FR3460</span><span>9/10（四）BGY 14:55 → EIN 16:35</span></div></div>
+    <div class="info-card full"><h4>🏨 住宿</h4><div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:4px">B&B Hotel Brescia</div><div style="font-size:13px;color:var(--text-light);margin-bottom:10px">Via Carlo Cassola, 17, Brescia · +39 030 293145</div><div style="display:flex;gap:10px;flex-wrap:wrap"><span class="hotel-pill">3晚</span><span class="hotel-pill">鄰近布雷西亞中央車站</span><span class="hotel-pill">訂位代號 BB21748772</span></div></div>
+  </div>
+  <div class="section-title">4天行程一覽</div>
+  <div class="table-wrap"><table class="ov-table"><thead><tr><th>日期</th><th>地點</th><th>交通</th><th>亮點</th></tr></thead><tbody>
+    <tr><td><span class="day-badge">Day 1</span><br/>9/7（一）</td><td>米蘭貝加莫→布雷西亞</td><td>飛機・客運</td><td>抵達、入住、拿坡里披薩</td></tr>
+    <tr><td><span class="day-badge">Day 2</span><br/>9/8（二）</td><td>克雷莫納・錫爾苗內</td><td>火車・步行</td><td>小提琴博物館、湖上城堡、古羅馬遺跡</td></tr>
+    <tr><td><span class="day-badge">Day 3</span><br/>9/9（三）</td><td>維洛那・馬爾切西內</td><td>火車・巴士・纜車</td><td>競技場、Monte Baldo、加爾達湖</td></tr>
+    <tr><td><span class="day-badge">Day 4</span><br/>9/10（四）</td><td>布雷西亞→米蘭貝加莫</td><td>步行・客運・飛機</td><td>古羅馬廣場、羅吉亞廣場、返航</td></tr>
+  </tbody></table></div>
+  <div class="tips-card"><h3>💡 旅遊重點提示</h3>
+    <div class="tip-item"><span class="tip-icon">🚆</span><div><strong>交通銜接：</strong>Day 2 與 Day 3 轉乘較多，出發前請再次確認 Trenitalia 與地方巴士班次。</div></div>
+    <div class="tip-item"><span class="tip-icon">🚠</span><div><strong>纜車與景點：</strong>Monte Baldo 纜車及熱門景點可能需排隊，建議預先確認營運時間與購票方式。</div></div>
+    <div class="tip-item"><span class="tip-icon">🏞️</span><div><strong>彈性安排：</strong>里瓦德爾加爾達為彈性行程，若交通延誤可直接略過，以確保順利返回布雷西亞。</div></div>
+    <div class="tip-item"><span class="tip-icon">⚠️</span><div><strong>航班提醒：</strong>回程起飛時間為14:55，原行程的12:45客運銜接偏緊，請務必預先核對班次與機場報到時間。</div></div>
+  </div>
+</div>
+<div class="view" id="day1"><div class="day-header"><div class="day-num">DAY 01 · 9月7日（一）</div><div class="day-title">布雷西亞<br/>抵達與入住</div><div class="day-city-pill">🛬 米蘭貝加莫 19:15 → 布雷西亞</div></div><div class="timeline" id="tl-day1"></div></div>
+<div class="view" id="day2"><div class="day-header"><div class="day-num">DAY 02 · 9月8日（二）</div><div class="day-title">克雷莫納・錫爾苗內<br/>工藝朝聖與湖畔珍珠</div><div class="day-city-pill">🎻 克雷莫納 → 錫爾苗內</div></div><div class="timeline" id="tl-day2"></div></div>
+<div class="view" id="day3"><div class="day-header"><div class="day-num">DAY 03 · 9月9日（三）</div><div class="day-title">維洛那・加爾達湖<br/>高山纜車、湖景與古城</div><div class="day-city-pill">🚠 維洛那 → Monte Baldo</div></div><div class="timeline" id="tl-day3"></div></div>
+<div class="view" id="day4"><div class="day-header"><div class="day-num">DAY 04 · 9月10日（四）</div><div class="day-title">布雷西亞<br/>古城巡禮與返航</div><div class="day-city-pill">✈ 布雷西亞 → 米蘭貝加莫機場</div></div><div class="timeline" id="tl-day4"></div></div>
+</div>
+<script>
+let currentLang='zh';
+const de={"總覽":"Übersicht","全部":"Alle","行程":"Route","第1天":"Tag 1","第2天":"Tag 2","第3天":"Tag 3","第4天":"Tag 4","北義大利":"Norditalien","4天3夜":"4 Tage / 3 Nächte","布雷西亞":"Brescia","克雷莫納":"Cremona","錫爾苗內":"Sirmione","維洛那・加爾達湖":"Verona & Gardasee","2026年9月北義大利旅行":"Norditalien-Reise im September 2026","以布雷西亞為三晚固定住宿基地，串連克雷莫納、錫爾苗內、維洛那、馬爾切西內與加爾達湖北岸，兼顧古城、工藝、湖景與山岳。":"Drei Nächte mit fester Basis in Brescia verbinden Cremona, Sirmione, Verona, Malcesine und den nördlichen Gardasee – mit Altstädten, Handwerk, See und Bergen.","✈ 去程":"✈ Hinflug","✈ 回程":"✈ Rückflug","🏨 住宿":"🏨 Unterkunft","3晚":"3 Nächte","鄰近布雷西亞中央車站":"Nahe Brescia Centrale","4天行程一覽":"Reiseplan für 4 Tage","日期":"Datum","地點":"Ort","交通":"Verkehr","亮點":"Höhepunkte","米蘭貝加莫→布雷西亞":"Mailand Bergamo → Brescia","飛機・客運":"Flug & Bus","抵達、入住、拿坡里披薩":"Ankunft, Check-in, neapolitanische Pizza","克雷莫納・錫爾苗內":"Cremona & Sirmione","火車・步行":"Zug & zu Fuß","小提琴博物館、湖上城堡、古羅馬遺跡":"Geigenmuseum, Wasserburg, römische Ruinen","維洛那・馬爾切西內":"Verona & Malcesine","火車・巴士・纜車":"Zug, Bus & Seilbahn","競技場、Monte Baldo、加爾達湖":"Arena, Monte Baldo, Gardasee","布雷西亞→米蘭貝加莫":"Brescia → Mailand Bergamo","步行・客運・飛機":"Zu Fuß, Bus & Flug","古羅馬廣場、羅吉亞廣場、返航":"Römisches Forum, Piazza della Loggia, Rückflug","💡 旅遊重點提示":"💡 Wichtige Hinweise","交通銜接：":"Verbindungen: ","Day 2 與 Day 3 轉乘較多，出發前請再次確認 Trenitalia 與地方巴士班次。":"An Tag 2 und 3 gibt es mehrere Umstiege. Trenitalia- und Regionalbus-Fahrpläne vorher erneut prüfen.","纜車與景點：":"Seilbahn & Sehenswürdigkeiten: ","Monte Baldo 纜車及熱門景點可能需排隊，建議預先確認營運時間與購票方式。":"Bei der Monte-Baldo-Seilbahn und beliebten Sehenswürdigkeiten sind Wartezeiten möglich. Öffnungszeiten und Tickets vorab prüfen.","彈性安排：":"Flexibilität: ","里瓦德爾加爾達為彈性行程，若交通延誤可直接略過，以確保順利返回布雷西亞。":"Riva del Garda ist optional. Bei Verspätungen auslassen, damit die Rückfahrt nach Brescia klappt.","航班提醒：":"Flughinweis: ","回程起飛時間為14:55，原行程的12:45客運銜接偏緊，請務必預先核對班次與機場報到時間。":"Der Rückflug startet um 14:55. Die geplante Busverbindung um 12:45 ist knapp; Fahrplan und Check-in-Zeit unbedingt vorab prüfen.","抵達與入住":"Ankunft & Check-in","工藝朝聖與湖畔珍珠":"Geigenbau & Seejuwel","高山纜車、湖景與古城":"Bergbahn, See & Altstadt","古城巡禮與返航":"Altstadt & Rückflug","米蘭貝加莫 19:15 → 布雷西亞":"Mailand Bergamo 19:15 → Brescia","克雷莫納 → 錫爾苗內":"Cremona → Sirmione","維洛那 → Monte Baldo":"Verona → Monte Baldo","布雷西亞 → 米蘭貝加莫機場":"Brescia → Flughafen Mailand Bergamo","住宿 CHECK-IN":"Unterkunft Check-in","深夜晚餐":"Spätes Abendessen","景點":"Sehenswürdigkeit","午餐":"Mittagessen","景點・散步":"Spaziergang","景點・壓軸":"Höhepunkt","彈性行程":"Option","回程":"Rückfahrt","退房・取行李":"Check-out & Gepäck","返航":"Rückflug","拿坡里披薩":"Neapolitanische Pizza","義大利麵":"Pasta","鄰近中央車站":"Nahe Hauptbahnhof","水上城堡":"Wasserburg","古羅馬遺跡":"Römische Ruinen","湖畔夕陽":"Sonnenuntergang am See","古羅馬地標":"Römisches Wahrzeichen","歷史廣場":"Historischer Platz","老城氛圍":"Altstadtflair","湖魚料理":"Fisch aus dem See","360度旋轉纜車":"360°-Drehseilbahn","視時間與體力":"Je nach Zeit und Kondition","文藝復興":"Renaissance","布雷西亞老城":"Altstadt von Brescia","倫巴底料理":"Lombardische Küche","步行至客運總站":"Zu Fuß zum Busbahnhof","羅馬遺產":"Römisches Erbe","地圖導航 ↗":"Karte öffnen ↗","🇮🇹 2026年9月北義大利旅行":"🇮🇹 Norditalien-Reise im September 2026","2026年9月7日（一）— 9月10日（四）":"7. September 2026 (Mo) — 10. September 2026 (Do)","9/7（一）EIN 17:40 → BGY 19:15":"07.09. (Mo) EIN 17:40 → BGY 19:15","9/10（四）BGY 14:55 → EIN 16:35":"10.09. (Do) BGY 14:55 → EIN 16:35","9/7（一）":"07.09. (Mo)","9/8（二）":"08.09. (Di)","9/9（三）":"09.09. (Mi)","9/10（四）":"10.09. (Do)","維洛那":"Verona","馬爾切西內":"Malcesine","訂位代號 BB21748772":"Buchungscode BB21748772","DAY 01 · 9月7日（一）":"TAG 01 · 7. September (Mo)","DAY 02 · 9月8日（二）":"TAG 02 · 8. September (Di)","DAY 03 · 9月9日（三）":"TAG 03 · 9. September (Mi)","DAY 04 · 9月10日（四）":"TAG 04 · 10. September (Do)","17:40 Eindhoven (EIN) → FR3461 → 19:15 Milano Bergamo (BGY)":"17:40 Eindhoven (EIN) → FR3461 → 19:15 Mailand Bergamo (BGY)","20:15–21:15 Autostradale 客運：米蘭貝加莫機場 → 布雷西亞客運總站":"20:15–21:15 Autostradale-Bus: Flughafen Mailand Bergamo → Busbahnhof Brescia","B&B Hotel Brescia":"B&B Hotel Brescia","21:30 步行至飯店辦理入住並安頓行李。地址：Via Carlo Cassola, 17, 25128 Brescia BS；電話：+39 030 293145。":"Um 21:30 zu Fuß zum Hotel, einchecken und das Gepäck abstellen. Adresse: Via Carlo Cassola 17, 25128 Brescia BS; Tel.: +39 030 293145.","Trattoria Caprese Brescia":"Trattoria Caprese Brescia","22:00 用餐。餐廳距離車站不遠，適合下飛機後快速補充能量。":"Abendessen um 22:00. Das Restaurant liegt nahe dem Bahnhof und ist ideal für eine schnelle Mahlzeit nach dem Flug.","08:30–09:20 布雷西亞 → 克雷莫納（直達火車約50分鐘）":"08:30–09:20 Brescia → Cremona (Direktzug, ca. 50 Min.)","小提琴博物館 Museo del Violino":"Geigenmuseum Museo del Violino","欣賞製琴大師史特拉底瓦里與其他名家的傳世名琴，認識克雷莫納的製琴傳統。":"Meisterwerke von Stradivari und anderen Geigenbauern sehen und Cremonas Geigenbautradition kennenlernen.","Ristorante Il Violino":"Ristorante Il Violino","品嚐克雷莫納傳統南瓜餃。":"Traditionelle Kürbis-Tortelli aus Cremona probieren.","13:45–15:15 克雷莫納 → 布雷西亞轉車 → Desenzano del Garda-Sirmione":"13:45–15:15 Cremona → Umstieg in Brescia → Desenzano del Garda-Sirmione","斯卡利傑羅城堡 Castello Scaligero":"Scaligerburg Castello Scaligero","走進錫爾苗內半島，參觀加爾達湖畔最具代表性的中世紀水上城堡。":"Auf der Halbinsel Sirmione die markante mittelalterliche Wasserburg am Gardasee besichtigen.","卡圖盧斯石窟 Grotte di Catullo":"Grotten des Catull Grotte di Catullo","沿湖畔步行至半島北端的古羅馬別墅遺跡，欣賞加爾達湖夕陽。":"Am See entlang zu den Ruinen einer römischen Villa an der Nordspitze gehen und den Sonnenuntergang genießen.","20:00 搭乘火車返回布雷西亞休息":"20:00 mit dem Zug zurück nach Brescia","08:00–08:35 布雷西亞 → 維洛那（火車約35分鐘）":"08:00–08:35 Brescia → Verona (Zug, ca. 35 Min.)","維洛那圓形競技場 Arena di Verona":"Arena von Verona","參觀維洛那市中心保存完整的古羅馬競技場。":"Das gut erhaltene römische Amphitheater im Zentrum von Verona besichtigen.","百草廣場 Piazza delle Erbe":"Piazza delle Erbe","漫步至維洛那老城的百草廣場，感受歷史建築、市集與咖啡館交織的古城氛圍。":"Zur Piazza delle Erbe spazieren und die Mischung aus historischen Gebäuden, Markt und Cafés erleben.","11:30–13:00 維洛那 → 馬爾切西內 Malcesine":"11:30–13:00 Verona → Malcesine","Trattoria Da Tino":"Trattoria Da Tino","在馬爾切西內享用新鮮湖魚料理。":"In Malcesine frischen Fisch aus dem Gardasee genießen.","Funivia Malcesine–Monte Baldo":"Seilbahn Malcesine–Monte Baldo","搭乘旋轉纜車登上蒙特巴爾多山，俯瞰加爾達湖與阿爾卑斯山環抱的壯麗全景。":"Mit der drehbaren Seilbahn auf den Monte Baldo fahren und das Panorama über Gardasee und Alpen genießen.","里瓦德爾加爾達 Riva del Garda":"Riva del Garda","若時間與體力許可，前往加爾達湖最北端，感受湖水與阿爾卑斯峭壁交會的獨特景色。":"Wenn Zeit und Kondition reichen, bis zum Nordende des Gardasees fahren, wo See und Alpenfelsen aufeinandertreffen.","19:00 南下轉乘火車，返回布雷西亞":"19:00 südwärts fahren, in den Zug umsteigen und nach Brescia zurückkehren","古羅馬廣場遺跡 Capitolium":"Römisches Forum und Capitolium","參觀阿爾卑斯山以南保存最完整的羅馬帝國公共建築之一。":"Eines der am besten erhaltenen römischen öffentlichen Bauwerke südlich der Alpen besichtigen.","羅吉亞廣場 Piazza della Loggia":"Piazza della Loggia","探訪充滿文藝復興氣息的市中心廣場與周邊歷史街區。":"Den Renaissanceplatz im Zentrum und die umliegenden historischen Gassen erkunden.","I Du de la Contrda":"I Du de la Contrda","享用道地的倫巴底大區傳統料理，之後準備前往機場。":"Traditionelle lombardische Küche genießen und anschließend zum Flughafen aufbrechen.","回飯店取行李，步行前往布雷西亞客運總站。":"Gepäck im Hotel abholen und zum Busbahnhof Brescia gehen.","12:45–13:45 Autostradale 客運：布雷西亞 → 米蘭貝加莫機場":"12:45–13:45 Autostradale-Bus: Brescia → Flughafen Mailand Bergamo","FR3460 Milano Bergamo → Eindhoven":"FR3460 Mailand Bergamo → Eindhoven","搭乘 FR3460 返回恩荷芬，結束四天三夜北義之旅。":"Mit FR3460 zurück nach Eindhoven – Ende der viertägigen Norditalienreise.","Stradivari":"Stradivari","Tortelli di zucca":"Kürbis-Tortelli","14:55起飛":"Abflug 14:55","16:35抵達":"Ankunft 16:35"};
+const days={"tl-day1":[{"type":"transport","icon":"✈️","label":"交通","name":"17:40 Eindhoven (EIN) → FR3461 → 19:15 Milano Bergamo (BGY)"},{"type":"transport","icon":"🚌","label":"交通","name":"20:15–21:15 Autostradale 客運：米蘭貝加莫機場 → 布雷西亞客運總站"},{"icon":"🏨","label":"住宿 CHECK-IN","name":"B&B Hotel Brescia","tags":[["hotel","3晚"],["transport","鄰近中央車站"]],"desc":"21:30 步行至飯店辦理入住並安頓行李。地址：Via Carlo Cassola, 17, 25128 Brescia BS；電話：+39 030 293145。","url":"https://www.google.com/maps/search/?api=1&query=B%26B+Hotel+Brescia"},{"icon":"🍕","label":"深夜晚餐","name":"Trattoria Caprese Brescia","tags":[["food","拿坡里披薩"],["food","義大利麵"]],"desc":"22:00 用餐。餐廳距離車站不遠，適合下飛機後快速補充能量。","url":"https://www.google.com/maps/search/?api=1&query=Trattoria+Caprese+Brescia"}],"tl-day2":[{"type":"transport","icon":"🚆","label":"交通","name":"08:30–09:20 布雷西亞 → 克雷莫納（直達火車約50分鐘）"},{"icon":"🎻","label":"景點","name":"小提琴博物館 Museo del Violino","tags":[["sight","10:00–12:30"],["sight","Stradivari"]],"desc":"欣賞製琴大師史特拉底瓦里與其他名家的傳世名琴，認識克雷莫納的製琴傳統。","url":"https://www.google.com/maps/search/?api=1&query=Museo+del+Violino+Cremona"},{"icon":"🍝","label":"午餐","name":"Ristorante Il Violino","tags":[["food","12:30–13:30"],["food","Tortelli di zucca"]],"desc":"品嚐克雷莫納傳統南瓜餃。","url":"https://www.google.com/maps/search/?api=1&query=Ristorante+Il+Violino+Cremona"},{"type":"transport","icon":"🚆","label":"交通","name":"13:45–15:15 克雷莫納 → 布雷西亞轉車 → Desenzano del Garda-Sirmione"},{"icon":"🏰","label":"景點","name":"斯卡利傑羅城堡 Castello Scaligero","tags":[["sight","15:30–19:30"],["sight","水上城堡"]],"desc":"走進錫爾苗內半島，參觀加爾達湖畔最具代表性的中世紀水上城堡。","url":"https://www.google.com/maps/search/?api=1&query=Castello+Scaligero+Sirmione"},{"icon":"🌅","label":"景點・散步","name":"卡圖盧斯石窟 Grotte di Catullo","tags":[["sight","古羅馬遺跡"],["sight","湖畔夕陽"]],"desc":"沿湖畔步行至半島北端的古羅馬別墅遺跡，欣賞加爾達湖夕陽。","url":"https://www.google.com/maps/search/?api=1&query=Grotte+di+Catullo+Sirmione"},{"type":"transport","icon":"🚆","label":"回程","name":"20:00 搭乘火車返回布雷西亞休息"}],"tl-day3":[{"type":"transport","icon":"🚆","label":"交通","name":"08:00–08:35 布雷西亞 → 維洛那（火車約35分鐘）"},{"icon":"🏛️","label":"景點","name":"維洛那圓形競技場 Arena di Verona","tags":[["sight","08:45–11:15"],["sight","古羅馬地標"]],"desc":"參觀維洛那市中心保存完整的古羅馬競技場。","url":"https://www.google.com/maps/search/?api=1&query=Arena+di+Verona"},{"icon":"🌿","label":"景點・散步","name":"百草廣場 Piazza delle Erbe","tags":[["sight","歷史廣場"],["sight","老城氛圍"]],"desc":"漫步至維洛那老城的百草廣場，感受歷史建築、市集與咖啡館交織的古城氛圍。","url":"https://www.google.com/maps/search/?api=1&query=Piazza+delle+Erbe+Verona"},{"type":"transport","icon":"🚌","label":"交通","name":"11:30–13:00 維洛那 → 馬爾切西內 Malcesine"},{"icon":"🐟","label":"午餐","name":"Trattoria Da Tino","tags":[["food","13:15起"],["food","湖魚料理"]],"desc":"在馬爾切西內享用新鮮湖魚料理。","url":"https://www.google.com/maps/search/?api=1&query=Trattoria+Da+Tino+Malcesine"},{"icon":"🚠","label":"景點・壓軸","name":"Funivia Malcesine–Monte Baldo","tags":[["sight","360度旋轉纜車"],["sight","13:15–16:00"]],"desc":"搭乘旋轉纜車登上蒙特巴爾多山，俯瞰加爾達湖與阿爾卑斯山環抱的壯麗全景。","url":"https://www.google.com/maps/search/?api=1&query=Funivia+Malcesine-Monte+Baldo"},{"icon":"🏞️","label":"彈性行程","name":"里瓦德爾加爾達 Riva del Garda","tags":[["sight","16:30–18:00"],["event","視時間與體力"]],"desc":"若時間與體力許可，前往加爾達湖最北端，感受湖水與阿爾卑斯峭壁交會的獨特景色。","url":"https://www.google.com/maps/search/?api=1&query=Riva+del+Garda"},{"type":"transport","icon":"🔙","label":"回程","name":"19:00 南下轉乘火車，返回布雷西亞"}],"tl-day4":[{"icon":"🏛️","label":"景點","name":"古羅馬廣場遺跡 Capitolium","tags":[["sight","09:00–11:30"],["sight","羅馬遺產"]],"desc":"參觀阿爾卑斯山以南保存最完整的羅馬帝國公共建築之一。","url":"https://www.google.com/maps/search/?api=1&query=Capitolium+Brescia"},{"icon":"🏰","label":"景點・散步","name":"羅吉亞廣場 Piazza della Loggia","tags":[["sight","文藝復興"],["sight","布雷西亞老城"]],"desc":"探訪充滿文藝復興氣息的市中心廣場與周邊歷史街區。","url":"https://www.google.com/maps/search/?api=1&query=Piazza+della+Loggia+Brescia"},{"icon":"🍽️","label":"午餐","name":"I Du de la Contrda","tags":[["food","11:30–12:15"],["food","倫巴底料理"]],"desc":"享用道地的倫巴底大區傳統料理，之後準備前往機場。","url":"https://www.google.com/maps/search/?api=1&query=I+Du+de+la+Contrda+Brescia"},{"icon":"🧳","label":"退房・取行李","name":"B&B Hotel Brescia","tags":[["hotel","12:30"],["transport","步行至客運總站"]],"desc":"回飯店取行李，步行前往布雷西亞客運總站。"},{"type":"transport","icon":"🚌","label":"交通","name":"12:45–13:45 Autostradale 客運：布雷西亞 → 米蘭貝加莫機場"},{"icon":"✈️","label":"返航","name":"FR3460 Milano Bergamo → Eindhoven","tags":[["transport","14:55起飛"],["transport","16:35抵達"]],"desc":"搭乘 FR3460 返回恩荷芬，結束四天三夜北義之旅。"}]};
+function tr(text){return currentLang==='zh'?text:(de[text]||text)}
+function localizeStaticText(){const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode(node){const p=node.parentElement;if(!p||p.closest('script,style,svg,.timeline'))return NodeFilter.FILTER_REJECT;return node.nodeValue.trim()?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_REJECT}});const nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);nodes.forEach(node=>{if(!node._sourceText)node._sourceText=node.nodeValue.trim();node.nodeValue=node.nodeValue.replace(node.nodeValue.trim(),tr(node._sourceText))})}
+function renderTimelines(){Object.keys(days).forEach(id=>buildTimeline(id,days[id]))}
+function setLanguage(lang){currentLang=lang;localStorage.setItem('trip-lang',lang);document.documentElement.lang=lang==='de'?'de':'zh-TW';document.title=lang==='de'?'Norditalien 4 Tage / 3 Nächte':'北義大利4天3夜';document.querySelectorAll('[data-lang-button]').forEach(btn=>btn.classList.toggle('active',btn.dataset.langButton===lang));localizeStaticText();renderTimelines()}
+const cityTabMap={'布雷西亞':'day1','克雷莫納':'day2','錫爾苗內':'day2','維洛那・加爾達湖':'day3'};
+function jumpToCity(city){const id=cityTabMap[city];const btn=[...document.querySelectorAll('.tab')].find(t=>t.getAttribute('onclick')==="showView('"+id+"',this)");if(btn)showView(id,btn)}
+function setActiveCity(city){document.querySelectorAll('.banner-pills .pill').forEach(p=>p.classList.toggle('red',p.dataset.city===city))}
+function showView(id,btn){document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));document.getElementById(id).classList.add('active');btn.classList.add('active');if(btn.dataset.city)setActiveCity(btn.dataset.city);window.scrollTo({top:document.querySelector('.banner').offsetHeight,behavior:'smooth'})}
+function buildTimeline(containerId,stops){const el=document.getElementById(containerId);if(!el)return;let n=0;el.innerHTML=stops.map((s,i)=>{if(s.type==='transport')return '<div class="stop transport"><div class="stop-dot"></div><div class="stop-card transport-card"><div class="stop-head"><div class="stop-icon">'+s.icon+'</div><div class="stop-info"><div class="stop-label" style="color:rgba(255,255,255,.55)">'+tr(s.label)+'</div><div class="stop-name">'+tr(s.name)+'</div></div></div></div></div>';n++;const id='stop-'+containerId+'-'+i;const tags=(s.tags||[]).map(t=>'<span class="tag '+t[0]+'">'+tr(t[1])+'</span>').join('');const link=s.url?'<a class="map-link" href="'+esc(s.url)+'" target="_blank" rel="noopener" onclick="event.stopPropagation()">'+tr('地圖導航 ↗')+'</a>':'';return '<div class="stop"><div class="stop-dot" onclick="toggleStop(\''+id+'\')">'+n+'</div><div class="stop-card" id="'+id+'" onclick="toggleStop(\''+id+'\')"><div class="stop-head"><div class="stop-icon">'+s.icon+'</div><div class="stop-info"><div class="stop-label">'+tr(s.label)+'</div><div class="stop-name">'+tr(s.name)+'</div></div><div class="stop-arrow">▼</div></div><div class="stop-body" id="body-'+id+'"><div class="stop-body-inner"><div class="tag-row">'+tags+'</div><p>'+tr(s.desc)+'</p>'+link+'</div></div></div></div>'}).join('')}
+function esc(v){return String(v).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+function toggleStop(id){const card=document.getElementById(id),body=document.getElementById('body-'+id),open=card.classList.toggle('open');body.classList.toggle('open',open)}
+renderTimelines();setLanguage(localStorage.getItem('trip-lang')||'zh');
+</script>
+</body>
+</html>
