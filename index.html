@@ -115,6 +115,24 @@ html,body{width:100%;overflow-x:hidden;background:var(--cream);color:var(--text)
 .tip-item:last-child{border:none}
 .tip-icon{flex-shrink:0;font-size:16px;margin-top:1px}
 
+/* ── PREBOOKING & APPS ── */
+.planning-card{background:var(--white);border-radius:12px;padding:20px;box-shadow:var(--shadow);margin-top:24px}
+.planning-card h3{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:14px;display:flex;align-items:center;gap:6px}
+.planning-section{border:1px solid var(--border);border-radius:12px;background:#fbfcfe;padding:16px}
+.planning-section + .planning-section{margin-top:14px}
+.planning-section-title{font-size:14.5px;font-weight:800;color:var(--navy);margin-bottom:10px;display:flex;align-items:center;gap:7px}
+.planning-item{padding:12px 0;border-top:1px dashed var(--border)}
+.planning-item:first-of-type{border-top:none;padding-top:0}
+.planning-item-title{font-size:15px;font-weight:800;color:var(--navy);line-height:1.45;margin-bottom:6px}
+.planning-item p{font-size:13.5px;line-height:1.75;color:#374151;margin:6px 0}
+.planning-steps{margin:8px 0 0 20px;color:#374151;font-size:13.5px;line-height:1.75}
+.planning-steps li{padding-left:2px;margin:2px 0}
+.planning-links{display:flex;flex-wrap:wrap;gap:7px;margin-top:9px}
+.planning-link{display:inline-flex;align-items:center;border-radius:20px;padding:5px 11px;background:#e6ecf5;color:var(--navy);font-size:12px;font-weight:700;text-decoration:none}
+.planning-link:hover{background:#d9e3f1}
+.planning-note{font-size:12.5px;color:var(--text-light);line-height:1.65;margin-top:8px}
+html[lang="de"] .planning-card{display:none}
+
 /* ── LOCAL SHOPPING ── */
 .shopping-card{background:var(--white);border-radius:12px;padding:20px;box-shadow:var(--shadow);margin-top:24px}
 .shopping-card h3{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:14px;display:flex;align-items:center;gap:6px}
@@ -300,6 +318,80 @@ html[lang="de"] .day-title{font-family:'Noto Sans TC',sans-serif}
     <div class="tip-item"><span class="tip-icon">🏞️</span><div><strong>湖區日節奏：</strong>Day 3 是全行程交通最重的一天，上午主攻 Malcesine 與 Monte Baldo 纜車，下午跨湖到 Limone；若巴士或纜車排隊延誤，請縮短 Malcesine 老城停留。</div></div>
     <div class="tip-item"><span class="tip-icon">🚌</span><div><strong>Sirmione 接駁：</strong>Sirmione 半島旺季由 ShuttleBus 連接 Colombare / Piazza Campiello 與歷史中心，2026年營運至9月27日、約每15–20分鐘一班。</div></div>
     <div class="tip-item"><span class="tip-icon">⚠️</span><div><strong>航班提醒：</strong>回程起飛時間為14:55，建議搭乘上午較早的 Autostradale 客運前往 BGY，保留機場報到與安檢時間。</div></div>
+  </div>
+  <div class="planning-card"><h3>🎟️ 必須提早網購的景點與體驗</h3>
+    <div class="planning-section">
+      <div class="planning-section-title">🚠 1. 馬爾切西內－蒙特巴爾多纜車</div>
+      <div class="planning-item">
+        <div class="planning-item-title">Funivia Malcesine-Monte Baldo</div>
+        <p>強烈建議在出發前 1–2 週買好 <strong>9月9日</strong> 的時段票。Monte Baldo 是 Day 3 的核心行程，早上若現場排隊太久，會直接壓縮 Malcesine 老城與 Limone 的時間。</p>
+        <div class="planning-links">
+          <a class="planning-link" href="https://www.funiviedelbaldo.it/en/" target="_blank" rel="noopener">官網預訂連結 ↗</a>
+          <a class="planning-link" href="https://www.funiviedelbaldo.it/en/funivia-malcesine-monte-baldo-tickets-online" target="_blank" rel="noopener">購票說明 ↗</a>
+        </div>
+        <ol class="planning-steps">
+          <li>進入官網後點擊右上角 <strong>Online Tickets</strong>。</li>
+          <li>選擇 <strong>Malcesine - Monte Baldo (Return)</strong>，也就是上下山來回票。</li>
+          <li>在日曆中選擇搭乘日期 <strong>9/9</strong>，再選預計搭乘時段，例如 09:00–09:30 或接近抵達 Malcesine 的時段。</li>
+          <li>線上刷卡付款後，系統會寄送包含 QR Code 的 PDF 電子票。</li>
+          <li>小提示：把 PDF 存到 iPhone「檔案」App，或可用時存入 Apple Wallet；當天抵達纜車站後，依現場指示走線上預約 / Fast Track 通道掃碼進站。</li>
+        </ol>
+        <div class="planning-note">注意：官方說明提醒，預約時段不等於保證該時段立刻發車，仍可能因天候、人潮或營運狀況延誤；選日期時請特別小心。</div>
+      </div>
+    </div>
+    <div class="planning-section">
+      <div class="planning-section-title">🎻 2. 小提琴博物館名琴試聽會</div>
+      <div class="planning-item">
+        <div class="planning-item-title">Museo del Violino - Audizioni</div>
+        <p>如果希望親耳聆聽史特拉底瓦里名琴的現場演奏，需要提早確認 <strong>9月8日</strong> 是否有 Audizioni 場次；這類活動通常週末較多，平日不一定有。</p>
+        <div class="planning-links">
+          <a class="planning-link" href="https://museodelviolino.org/en/auditions/" target="_blank" rel="noopener">Audizioni 場次查詢 ↗</a>
+          <a class="planning-link" href="https://museodelviolino.org/biglietti/?lang=en" target="_blank" rel="noopener">博物館門票 ↗</a>
+        </div>
+        <ol class="planning-steps">
+          <li>進入 Audizioni 頁面後，查看 <strong>9月8日</strong> 當天是否有試聽會。</li>
+          <li>若當天有場次，點擊對應的 <strong>Buy Tickets</strong>，系統通常會導向義大利售票平台，例如 Vivaticket，再註冊帳號並付款。</li>
+          <li>若當天沒有試聽會，一般博物館參觀門票不需要太早買；當天到櫃檯購票通常即可。</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <div class="planning-card"><h3>📱 交通 App 下載與使用指南（iOS）</h3>
+    <div class="planning-section">
+      <div class="planning-section-title">🚆 1. 義大利國鐵 Trenitalia</div>
+      <div class="planning-item">
+        <p>這幾天最常用來查詢與購買區域火車票，例如 Brescia ⇄ Cremona、Brescia ⇄ Peschiera / Desenzano。App 可查時刻、買票、追蹤列車狀態，介面支援英文。</p>
+        <div class="planning-links">
+          <a class="planning-link" href="https://apps.apple.com/us/app/trenitalia/id331050847" target="_blank" rel="noopener">App Store ↗</a>
+          <a class="planning-link" href="https://www.trenitalia.com/en/information/trenitalia-app.html" target="_blank" rel="noopener">官方 App 說明 ↗</a>
+          <a class="planning-link" href="https://www.trenitalia.com/en/information/digital-regional-ticket.html" target="_blank" rel="noopener">Digital Regional Ticket ↗</a>
+        </div>
+        <div class="planning-note">小提示：Trenitalia 官方目前寫 Digital Regional Ticket 會在所選班次發車時自動驗票，不再需要手動 check-in；出發前仍請以 App 內票券頁面顯示為準。</div>
+      </div>
+    </div>
+    <div class="planning-section">
+      <div class="planning-section-title">🚌 2. 機場客運 Autostradale</div>
+      <div class="planning-item">
+        <p>用於購買 Bergamo Orio al Serio Airport ⇄ Brescia Autostazione 的機場巴士票。若不想多裝 App，落地後用 Safari 開官網購票，或到 7 號站牌現場購票也很直覺。</p>
+        <div class="planning-links">
+          <a class="planning-link" href="https://autostradale.it/en/" target="_blank" rel="noopener">Autostradale 官網 ↗</a>
+          <a class="planning-link" href="https://autostradale.it/en/i-nostri-servizi/transfer-aeroportuali/brescia-autostazione-bergamo-orio-al-serio/" target="_blank" rel="noopener">BGY ⇄ Brescia 路線 ↗</a>
+        </div>
+        <div class="planning-note">票券通常以 QR Code 形式出示；回程因 14:55 起飛，建議前一天先確認上午班次。</div>
+      </div>
+    </div>
+    <div class="planning-section">
+      <div class="planning-section-title">🚌⛴️ 3. 加爾達湖區公車與渡輪</div>
+      <div class="planning-item">
+        <p><strong>公車 Arriva / ATV：</strong>湖西岸、Sirmione 接駁與湖東岸巴士都建議出發前一天再查。Arriva 官方也提供 MyPay App，可購買、儲存與驗票。</p>
+        <p><strong>渡輪 Navigazione Laghi：</strong>Malcesine → Limone 跨湖船票建議保留彈性；抵達 Malcesine 碼頭後，現場購買單程船票即可。若當天風大或臨時調整，現場資訊最可靠。</p>
+        <div class="planning-links">
+          <a class="planning-link" href="https://brescia.arriva.it/en/garda-lake/" target="_blank" rel="noopener">Arriva Lake Garda ↗</a>
+          <a class="planning-link" href="https://www.atv.verona.it/en/LineeLago" target="_blank" rel="noopener">ATV Lake Garda ↗</a>
+          <a class="planning-link" href="https://www.navigazionelaghi.it/en/tickets-and-timetables-lake-garda/" target="_blank" rel="noopener">Navigazione Laghi ↗</a>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 <div class="view" id="day1"><div class="day-header"><div class="day-num">DAY 01 · 9月7日（一）</div><div class="day-title">布雷西亞<br/>抵達與入住</div><div class="day-city-pill">🛬 米蘭貝加莫 19:15 → 布雷西亞</div></div><div class="timeline" id="tl-day1"></div></div>
